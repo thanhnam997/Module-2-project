@@ -27,20 +27,7 @@ if __name__ == "__main__":
     welcome_message()
     show_menu()
     print("\nReady to serve our community with the finest donuts!")
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # Our complete menu organized by category
+     # Our complete menu organized by category
 donut_menu = {
 'Small Batch': [
 'Wild Rice & Honey', # Made with native MN wild rice
@@ -84,3 +71,50 @@ for category, items in donut_menu.items():
  print(category + ":")
 for item in items:
  print(" - " + item)
+
+
+ #Initialize our thoughtfully priced menu items
+ small_batch_price = 5.50 # our signature donuts
+ Seasonal_price = 6.50 # Using local seasonal ingredients
+ Collab_price = 7.50 #Local business collaborations
+
+ # Set our daily small-batch inventory 
+ small_batch_inventory = 36 # Classic varieties
+ seasonal_inventory = 24 # Made with local seasonal ingredients
+ collab_inventory  = 12 #special collaboration items
+
+ # Calculate our morning inventory value
+ total_value = (small_batch_price * small_batch_inventory + Seasonal_price * seasonal_inventory + Collab_price * collab_inventory)
+
+ # Format total value to 2 decimal places using string formatting 
+ print("Morning inventory value: $" + str("{:.2f}".format(total_value)))
+
+
+
+ #conditional statements
+
+ # Customer information 
+ purchase_total = 28 
+ is_local_resident = True
+ bike_comuter = True
+ brought_mug = False
+
+ #Initialize reward
+ discount = 0
+
+ if is_local_resident:
+     discount += 0.10 # supporting our neighbors with 10% off
+
+ if bike_comuter:
+    discount += 0.05 #Encouring sustainable transport
+
+ if brought_mug:
+    discount += 0.05 #Reducing waste
+
+if purchase_total >= 25:
+    discount += 0.05 # Bulk order appreciation
+
+ #caculate and display final discount
+final_discount = discount * 100
+print("Your community reward discount:" + str(final_discount) + "%")
+
